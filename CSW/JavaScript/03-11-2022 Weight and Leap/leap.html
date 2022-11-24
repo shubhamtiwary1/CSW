@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<style>
+			body{
+				background-color: #0a071a;
+					
+			}
+			.div1{
+				
+				border: 2px solid red;
+				background-color: lightblue;
+				text-align: center;
+				width: 500px;
+				height: 200px;
+				position: relative;
+				left: 400px;
+			}
+			
+			.div2{
+				border: 2px solid red;
+				background-color: lightblue;
+				text-align: center;
+				width: 500px;
+				height: 200px;
+				position: relative;
+				left: 400px;
+				top: 50px;
+			}
+			ul li{
+				padding: 4px;
+				text-decoration: none;
+				list-style-type: none;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class = "div1">
+			<p>
+				<input type = "number" id = "take" placeholder = "Enter a Year">
+			</p>
+			<h2 id = "out">	
+			</h2>
+			<p>
+				<button onclick = "leap()">Check</button>
+			</p>
+			
+		</div>
+		<div class = "div2">
+			<p>
+				<ul>
+					<li><input type = "number" id = "take1" placeholder = "Enter Your Weight in Kg"></li>
+					<li><input type = "number" id = "take2" placeholder = "Enter your height in meters"></li>
+				</ul>
+			</p>
+			<h2 id = "output">
+
+			</h2>
+			<p>
+				<button id = "btn2" onclick = "bmi()">Calculate</button>
+			</p>
+			
+		</div>
+		<script src = "jscript.js"></script>
+	</body>
+</html>

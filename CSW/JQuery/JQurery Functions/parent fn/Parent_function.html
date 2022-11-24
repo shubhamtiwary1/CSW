@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<style>
+			.div1 *{	
+				display: block;
+				border: 2px solid red;
+				color: green;
+				padding: 6px;
+				margin: 20px;
+			}
+			.div2{
+				width: 400px;
+			}
+			ul{
+				list-style-type: none;
+			}
+			.btn{
+				border: 2px solid black;
+				background-color: grey;
+				color: lightgreen;
+			}
+		</style>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					$("span").parent().css({"color": "blue","border": "2px solid blue"});
+				});
+				$("#btn2").click(function(){
+					$("span").parents().css({"color": "blue","border": "2px solid blue"});
+				});
+				$("#btn3").click(function(){
+					$("span").parentsUntil(".div2").css({"color": "blue","border": "2px solid blue"});
+				});
+				
+				$("#btn4").click(function(){
+					var aa = $("#in").val();
+					if($("body").find(aa).length != 0){
+						$("span").parentsUntil(aa).css({"color": "blue","border": "2px solid blue"});
+					}
+					else{
+						alert("Invalid");
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button class= "btn" id="btn1">Parent</button>
+		<button class= "btn" id="btn2">Parents</button>
+		<button class= "btn" id="btn3">ParentsUntil</button>
+		<div class="div1">div1
+			<div class="div2"> div2
+				<ul> ul
+					<li> li
+						<span>Span</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<input id="in" type="text">
+		<button class= "btn" id="btn4">Submit</button>
+	</body>
+</html>

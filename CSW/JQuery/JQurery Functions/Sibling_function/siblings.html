@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<style>
+			body *{ 
+				display: block;
+				border: 3px solid yellow;
+				color: orange;
+				padding: 6px;
+				margin: 18px;
+			}
+			.btn{
+				display: inline;
+				border: 2px solid black;
+				background-color: grey;
+				color: black;
+			}
+		</style>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					$("h2").siblings().css({"color": "blue", "border": "3px solid blue"});
+				});
+				$("#btn2").click(function(){
+					$("h2").next().css({"color": "blue", "border": "3px solid blue"});
+				});
+				$("#btn3").click(function(){
+					$("span").nextUntil("h5").css({"color": "blue", "border": "3px solid blue"});
+				});
+				$("#btn4").click(function(){
+					$("span").prev().css({"color": "blue", "border": "3px solid blue"});
+				});
+				$("#btn5").click(function(){
+					$("h4").prevAll().css({"color": "blue", "border": "3px solid blue"});
+				});
+				$("#btn6").click(function(){
+					$("h5").prevUntil("span").css({"color": "blue", "border": "3px solid blue"});
+				});
+				$("#btn7").click(function(){
+					$("div").first().css({"background-color": "lightgreen"});
+				});
+				$("#btn8").click(function(){
+					$("div").last().css({"background-color": "lightgreen"});
+				});
+				$("#btn9").click(function(){
+					$("div").eq(1).css({"background-color": "lightgreen"});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div>HI</div>
+		<div>Hello</div>
+		<div>div (parent)
+			<p>p1</p>
+			<span>span1</span>
+			<h2>h2</h2>
+			<h3>h3</h3>
+			<h4>h4</h4>
+			<h5>h5</h5>
+			<h6>h6</h6>
+		</div>
+		<button class="btn" id="btn1">Siblings()</button>
+		<button class="btn" id="btn2">Next()</button>
+		<button class="btn" id="btn3">NextUntil()</button>
+		<button class="btn" id="btn4">Prev()</button>
+		<button class="btn" id="btn5">PrevAll()</button>
+		<button class="btn" id="btn6">PrevUntil()</button>
+		<button class="btn" id="btn7">First()</button>
+		<button class="btn" id="btn8">Last()</button>
+		<button class="btn" id="btn9">Eq()</button>
+	</body>
+</html>
